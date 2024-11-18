@@ -8,11 +8,7 @@ import { fetchListasTablasGeneral } from '../../../actions/listasTablasGeneralAc
 import PopUpPrecios from './PopUpPrecios';
 import { deletePrecioAction } from '../../../actions/listasTablasGeneralActions';
 import Swal from 'sweetalert2';
-<<<<<<< HEAD
 import PopUpAgregarLista from './PopUpAgregarLista';
-=======
-
->>>>>>> 1a97a05bdf05781068196b866ec85885d4a62603
 
 
 const Precios = () => {
@@ -25,17 +21,6 @@ const [isAddListPopupVisible, setIsAddListPopupVisible] = useState(false);
 const handleAddList = () => {
   setIsAddListPopupVisible(true); // Mostrar el popup
 };
-
-
-
-//const de graficas
-const [selectedGraphProduct, setSelectedGraphProduct] = useState(null);
-
-  // Manejador para seleccionar el producto de la gráfica
-  const handleRowClick = (producto) => {
-    setSelectedGraphProduct(producto); // Selecciona el producto para las gráficas
-    console.log("Producto seleccionado para gráficas:", producto.IdListaOK);
-  };
 
 
 
@@ -89,7 +74,6 @@ const handleDeleteClick = (idListaOK) => {
 
 
 
-<<<<<<< HEAD
 const dispatch = useDispatch();
 const { listasTablasGeneral, loading, error } = useSelector(state => state.listasTablasGeneral);
 
@@ -97,9 +81,6 @@ const { listasTablasGeneral, loading, error } = useSelector(state => state.lista
 //const de la tabla
 
 
-=======
-  //const de la tabla
->>>>>>> 1a97a05bdf05781068196b866ec85885d4a62603
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10); // Valor inicial de elementos por página
   const [selectedItems, setSelectedItems] = useState([]); // Estado para almacenar elementos seleccionados
@@ -209,7 +190,6 @@ const exportToCSV = () => {
   <h3>Precios Recientes</h3>
 
 
-<<<<<<< HEAD
   <span className="Aggbtn"  title="Agregar una lista nueva" onClick={handleAddList} >
   <i class="fa-solid fa-plus"></i>
   {/* Mostrar el PopUp solo cuando isAddListPopupVisible es true */}
@@ -219,12 +199,6 @@ const exportToCSV = () => {
           isAddListPopupVisible={isAddListPopupVisible}
           setIsAddListPopupVisible={setIsAddListPopupVisible}
         />
-=======
-  <span className="Aggbtn"  title="Agregar una lista nueva" >
-  <i class="fa-solid fa-plus"></i>
-  </span>
-
->>>>>>> 1a97a05bdf05781068196b866ec85885d4a62603
 
   {/* Botón para refrescar datos */}
   <span
@@ -232,10 +206,7 @@ const exportToCSV = () => {
   title="Recargar tabla"
   onClick={() => dispatch(fetchListasTablasGeneral())} // Llama a la acción de actualizar listas cuando se hace clic en el botón
 >
-<<<<<<< HEAD
 
-=======
->>>>>>> 1a97a05bdf05781068196b866ec85885d4a62603
   <i className="fa-solid fa-arrows-rotate"></i>
 </span>
 
@@ -361,7 +332,9 @@ const exportToCSV = () => {
               <i className="fa-solid fa-chart-simple"></i>
               <h3 className="titulo-grafica">Gráficas</h3>
             </div>
-            <p className="info-grafica">Precios </p>
+            <p className="info-grafica">
+  Precios de: {selectedGraphProduct ? selectedGraphProduct.IdListaOK : "Selecciona un producto"}
+</p>
 
             <Graficas product={selectedGraphProduct} />
 
