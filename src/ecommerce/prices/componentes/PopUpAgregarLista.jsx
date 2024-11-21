@@ -135,7 +135,7 @@ const PopUpAgregarLista = ({ isAddListPopupVisible, setIsAddListPopupVisible, se
     <div className={`popup-agregar-lista ${isAddListPopupVisible ? 'show' : ''}`}>
       <div className="popup-agregar-lista-content">
         <h4>Agregar Nueva Lista de Precios</h4>
-        <form onSubmit={handleSubmit}>
+        <form className='FormaggList' onSubmit={handleSubmit}>
           <label>ID Institución:</label>
           <input
             type="text"
@@ -200,7 +200,7 @@ const PopUpAgregarLista = ({ isAddListPopupVisible, setIsAddListPopupVisible, se
             onChange={handleInputChange}
             required
           />
-          <button type="button" onClick={handleAddPrecio}>Agregar Precio</button>
+          <button className='addPrice' onClick={handleAddPrecio}>Agregar Precio</button>
           <div>
             <label>Precios:</label>
             <div className="precios-container" style={{ overflowX: 'auto' }}>

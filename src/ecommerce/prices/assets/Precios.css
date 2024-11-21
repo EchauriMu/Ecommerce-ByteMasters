@@ -62,18 +62,18 @@ html, body {
 
 .Exportarbtn.inactivo{
     font-size: 15px;
-    padding: 6px 20px;
+    padding: 4px 20px 6px 20px;
     color: white;
     border-radius: 10px;
     font-weight: 700;
     background: #e0dcff;
-    cursor: not-allowed;
+    cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .Exportarbtn.activo{
     font-size: 15px;
-    padding: 6px 20px;
+    padding: 4px 20px 6px 20px;
     color: white;
     border-radius: 10px;
     font-weight: 700;
@@ -166,7 +166,7 @@ html, body {
 
 .precios table td {
     font-size: 14px;
-    padding: 6px 8px 6px 0px;
+    padding: 6px 8px 6px 6px;
     border-bottom: 1px solid #ddd;
     
 }
